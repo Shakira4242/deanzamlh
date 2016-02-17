@@ -3,7 +3,7 @@
     <img src="http://mobile.wnd.com/files/2014/07/chuck-norris-07.jpg" class="img-rounded" alt="Chuck Norrisious" style='width: 50%;display: block;margin: 0 auto;'>
     <script>
     	$.ajax({
-    		url: "http://api.icndb.com/jokes/random",
+    		url: "https://api.icndb.com/jokes/random",
     		data: {},
     		success: function(data) {
     			$("#chucknorrisquotes").html(data.value.joke);
@@ -17,8 +17,6 @@
 	    			window.location.replace("/homepage");
 	    		}
 	    	});
-    	},7000);
-
-    		    
+    	},7000);   
     </script>
 <%- include ./partials/footer.ejs %>

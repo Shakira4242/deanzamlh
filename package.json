@@ -16,7 +16,6 @@
     "express": "4.13.4",
     "foobar": "^1.1.0",
     "morgan": "~1.6.1",
-    "request": "2.14.4",
     "serve-favicon": "~2.3.0"
   }
 }

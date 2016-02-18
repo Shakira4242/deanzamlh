@@ -1,6 +1,12 @@
 <%- include ./partials/header.ejs %>
-    <h1><%= chucknorrisquotes %></h1>
-    <img src="http://mobile.wnd.com/files/2014/07/chuck-norris-07.jpg" class="img-rounded" alt="Chuck Norrisious" style='width: 50%;display: block;margin: 0 auto;'>
+    <script type="text/javascript" src="javascripts/please-wait.min.js"></script>
+    <script>
+      window.loading_screen = window.pleaseWait({
+        logo: "/images/dude.jpg",
+        backgroundColor: '#f46d3b',
+        loadingHtml: "<%= chucknorrisquotes %>"
+      });
+    </script>
     <script>
     	setTimeout(function(){
     		$.ajax({

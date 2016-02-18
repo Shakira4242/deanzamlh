@@ -1,4 +1,5 @@
 var express = require('express');
+var request = require('request');
 var router = express.Router();
 /* GET home page. */
 
@@ -8,7 +9,7 @@ router.get('/', function(req, res, next) {
         var chuck = JSON.parse(body); 
         res.render('index',{chucknorrisquotes: chuck.value.joke.replace(/&quot;/g,'"')});
     }
-	});
+  });
 });
 
 router.get('/homepage', function(req, res, next) {

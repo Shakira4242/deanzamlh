@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 	  	joke = JSON.parse(body);
 	    res.render('index',{chucknorrisquotes: joke.value.joke});
 	  }
-  })
+  });
 });
 
 router.get('/homepage', function(req, res, next) {

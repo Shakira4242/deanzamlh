@@ -1,15 +1,14 @@
 var express = require('express');
-var request = require('request');
+var requestify = require('requestify');
 var router = express.Router();
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-  request("http://api.icndb.com/jokes/random",function (error, response, body) {
-	  if (!error && response.statusCode == 200) {
-	  	joke = JSON.parse(body);
-	    res.render('index',{chucknorrisquotes: joke.value.joke});
-	  }
-  });
+  requestify.get("http://api.icndb.com/jokes/random")
+  	.then(function(response){
+  		console.log(response.getBody().value.joke);
+  		res.render('index',{chucknorrisquotes: response.getBody().value.joke});
+  	});
 });
 
 router.get('/homepage', function(req, res, next) {
